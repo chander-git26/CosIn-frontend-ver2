@@ -4,7 +4,15 @@ module.exports = {
     "./src/**/*.{html,js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors: {
+        'accent': '#FDC029',
+        'accent-hover': '#E5AA18',
+      },
+      container: {
+        center: true,
+      },
+    },
   },
   plugins: [],
 }
