@@ -2,7 +2,9 @@ import React from 'react'
 
 const Userinfo = () => {
   return (
-    <div>Userinfo</div>
+    <div className={` rounded-xl flex h-[475px] w-[900px] bg-white   `} >
+        Hello
+    </div>
   )
 }
 
