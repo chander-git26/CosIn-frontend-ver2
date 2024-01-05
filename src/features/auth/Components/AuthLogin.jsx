@@ -36,7 +36,7 @@ const show = async()=>{
             <h1 className='font-semibold text-white text-xl'>Health Insurance</h1>
 
             {logintype==='mobile'?<Mobilelogin setLogintype={setLogintype} />:<Emaillogin setLogintype={setLogintype}/>}
-            
+            <h1 className='text-[12px] font-normal text-gray-600 text-center '>By Proceeding, I agree to T&C , Privacy Policy & Tariff Rates</h1>
 
             <button className='text-gray-600 absolute top-4 right-4 text-2xl' onClick={()=>loginToggle(prev=>!prev)}><i class="bi bi-x"></i></button>
         </div>
