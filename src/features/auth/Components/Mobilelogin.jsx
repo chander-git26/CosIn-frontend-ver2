@@ -3,7 +3,7 @@ import * as Yup from 'yup';
 import React from 'react'
  
 
-function Mobilelogin({setLogintype}) {
+function Mobilelogin({setLogintype, setOtp}) {
   return (
     <div>
    
@@ -23,7 +23,7 @@ function Mobilelogin({setLogintype}) {
               onSubmit={async (values) => {
                 await new Promise((r) => setTimeout(r, 500));
                  console.log(values);
-               
+                 setOtp(values)
               }}
             >
               {formik => (
@@ -33,7 +33,7 @@ function Mobilelogin({setLogintype}) {
                     {/* <label htmlFor="mobile" className={inpLableSty}>PHONE</label> */}
                     <Field id="mobile" name="mobile" placeholder="Enter your phone number" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-xs" />
                     {formik.touched.mobile && formik.errors.mobile ? (
-                      <div  className='text-xs text-accent-hover' ><i className="bi bi-exclamation-circle"></i> {formik.errors.mobile}</div>
+                      <div  className='text-xs text-accent-hover mt-2' ><i className="bi bi-exclamation-circle"></i> {formik.errors.mobile}</div>
                     ) : null}
                  
                   </div>

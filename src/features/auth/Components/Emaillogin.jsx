@@ -13,7 +13,7 @@ import React from 'react'
 
 
 
-const Emaillogin = ({ setLogintype }) => {
+const Emaillogin = ({ setLogintype,setOtp }) => {
     return (
         <Formik
             initialValues={{
@@ -26,6 +26,7 @@ const Emaillogin = ({ setLogintype }) => {
             onSubmit={async (values) => {
                 await new Promise((r) => setTimeout(r, 500));
                 console.log(values);
+                setOtp('values')
 
             }}
         >
@@ -35,7 +36,7 @@ const Emaillogin = ({ setLogintype }) => {
                     <div className="flex flex-col my-5 relative  border-b-gray-400">
                         <Field id="email" name="email" placeholder="Enter your email" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-xs" />
                         {formik.touched.email && formik.errors.email ? (
-                            <div className='text-xs text-accent-hover' ><i className="bi bi-exclamation-circle"></i> {formik.errors.email}</div>
+                            <div className='text-xs mt-2 text-accent-hover' ><i className="bi bi-exclamation-circle"></i> {formik.errors.email}</div>
                         ) : null}
 
                     </div>
