@@ -39,7 +39,7 @@ function Mobilelogin({setLogintype}) {
                   </div>
 
                   <button type="submit" className='bg-accent font-medium  p-3 px-4 hover:bg-accent-hover   w-auto rounded-md hover:text-white transition-all	 duration-200   text-sm'>Get OTP</button>
-                  <button className='text-sm text-center py-2 ' onClick={()=>{setLogintype('email')}}> <span className='text-gray-600 font-semibold text-xs  hover:text-accent-hover '>  Login with E-Mail</span></button>
+                  <button className='text-sm text-center py-2 ' onClick={()=>{setLogintype('email')}}> <span className='text-gray-500 font-semibold text-xs  hover:text-accent-hover '> {"(or)"} Login with E-Mail</span></button>
 
                 </Form>)}
             </Formik>
