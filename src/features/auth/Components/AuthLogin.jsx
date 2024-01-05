@@ -5,7 +5,7 @@ import Emaillogin from './Emaillogin';
 import VerifyOtp from './VerifyOtp';
 
 
-const AuthLogin = ({loginToggle}) => {
+const AuthLogin = ({loginToggle ,setLoginsuccess}) => {
   const [logintype,setLogintype] =  useState('mobile')
   const [otp,setOtp] = useState()
 
@@ -28,8 +28,8 @@ const AuthLogin = ({loginToggle}) => {
             <h1 className='font-semibold text-white text-xl'>Health Insurance</h1>
 
             {logintype==='mobile'?
-            (!otp?<Mobilelogin setLogintype={setLogintype} setOtp={setOtp}/>:<VerifyOtp/>)
-            :(!otp?<Emaillogin setLogintype={setLogintype} setOtp={setOtp}/>:<VerifyOtp/>)}
+            (!otp?<Mobilelogin setLogintype={setLogintype} setOtp={setOtp}/>:<VerifyOtp setLoginsuccess={setLoginsuccess}/>)
+            :(!otp?<Emaillogin setLogintype={setLogintype} setOtp={setOtp}/>:<VerifyOtp setLoginsuccess={setLoginsuccess}/>)}
 
 
             <h1 className='text-[12px] font-normal text-gray-600 text-center '>By Proceeding, I agree to <span className='hover:text-accent-hover hover:cursor-pointer hover:text-shadow hover:[text-shadow:_0_0_1px_#E5AA18]'> T&C , Privacy Policy & Tariff Rates</span></h1>

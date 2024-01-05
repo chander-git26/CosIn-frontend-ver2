@@ -6,7 +6,7 @@ import React from 'react'
 
 
 
-const VerifyOtp = () => {
+const VerifyOtp = ({setLoginsuccess}) => {
   return (
     <div>
      
@@ -23,7 +23,8 @@ const VerifyOtp = () => {
               onSubmit={async (values) => {
                 await new Promise((r) => setTimeout(r, 500));
                  console.log(values);
-                 setOtp(values)
+                 
+                 setLoginsuccess("success")
               }}
             >
               {formik => (
