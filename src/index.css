@@ -41,3 +41,28 @@
         -webkit-transform: scale(1.1, 1.1);
     }
 }
+.unmountPopOver {
+ 
+ 
+    -webkit-animation: unbummer 300ms;
+    animation: unbummer 300ms;
+    -webkit-transform: scale(1, 1);
+    transform: scale(1  , 1);
+    -webkit-animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
+}
+
+@-webkit-keyframes unbummer {
+    100% {
+        -webkit-transform: scale(0, 0);
+    }
+     
+}
+
+@keyframes unbummer {
+    100% {
+        transform: scale(0, 0);
+    }
+    
+     
+}

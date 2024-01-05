@@ -2,8 +2,8 @@ import React from 'react'
 
 const Banner = ({loginToggle}) => {
     return (
-        <div className=' flex  justify-center'>
-            <div className='text-center mt-14 '>
+        <div className=' flex h-full  justify-center items-center'>
+            <div className='text-center  '>
                 <h1 className='text-7xl py-3 leading-snug text-gray-900'>All things Insurance,<br/>
                     right here.</h1>
                 <h5 className='text-lg text-gray-600 font-semibold leading-snug'>Built for a growing India.

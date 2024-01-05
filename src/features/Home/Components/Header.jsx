@@ -3,7 +3,7 @@ import logo from '../../../assets/images/logo.png'
 console.log(logo);
 const Header = ({loginToggle}) => {
   return (
-    <div className='container mx-auto flex justify-between items-center '>
+    <div className='container  fixed   mx-auto flex justify-between my-6  inset-x-0     items-center '>
         <div className='flex items-center gap-3'>
             <img src={logo} className='w-12' alt="Cos insurance logo" />
             <h1 className='font-bold text-2xl py-8 text-gray-600'>COS Insurance</h1>
