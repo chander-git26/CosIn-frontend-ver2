@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
-import AuthLogin from '../../auth/Components/AuthLogin'
-import Userinfo from '../../auth/Components/Userinfo'
+import AuthLogin from '../features/auth/components/AuthLogin'
+import Userinfo from '../features/auth/components/Userinfo'
 
 const Login = ({ loginToggle }) => {
 

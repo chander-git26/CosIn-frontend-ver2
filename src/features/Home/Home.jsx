@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import Header from './Components/Header'
-import Banner from './Components/Banner'
-import Login from './Components/Login'
+import Header from '../../components/Header'
+import Banner from '../../Components/Banner'
+import Login from '../../Components/Login'
 
 const Home = () => {
   const [ displayLogin, setDisplayLogin ] = useState(false)

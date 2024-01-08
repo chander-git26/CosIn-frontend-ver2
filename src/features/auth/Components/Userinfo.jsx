@@ -45,7 +45,7 @@ const Userinfo = ( {loginToggle}) => {
                                 const valid = validDate.getFullYear() - dob.getFullYear() >= 18;
                                 return !valid ? ctx.createError() : valid;
                             })
-                            .required('Date of birth required'),
+                            .required('Date of birth required').typeError('Date of birth required'),
 
                         maritalStatus: Yup.string()
                             .required(),
@@ -137,8 +137,8 @@ const Userinfo = ( {loginToggle}) => {
                                         {...formik.getFieldProps('dateOfBirth')}
                                             className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-sm"
                                             mask="99/99/9999"
-                                            maskPlaceholder="mm/dd/yyyy"
-                                            placeholder="mm/dd/yyyy"
+                                            maskPlaceholder="mm/dd/YYYY"
+                                            placeholder="MM/DD/YYYY"
                                         />
                                         {formik.touched.dateOfBirth && formik.errors.dateOfBirth ? (
                                             <div  className='text-xs mt-2 text-accent-hover absolute -bottom-6 left-0'><i className="bi bi-exclamation-circle"></i> {formik.errors.dateOfBirth}</div>
