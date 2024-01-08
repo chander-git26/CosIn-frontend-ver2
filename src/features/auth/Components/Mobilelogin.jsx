@@ -1,9 +1,13 @@
 import { Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import React from 'react'
+import { userMobileLoginApi} from '../UserloginApi';
  
 
 function Mobilelogin({setLogintype, setOtp}) {
+
+
+
   return (
     <div>
    
@@ -23,7 +27,8 @@ function Mobilelogin({setLogintype, setOtp}) {
               onSubmit={async (values) => {
                 await new Promise((r) => setTimeout(r, 500));
                  console.log(values);
-                 setOtp(values)
+                const {data}= await userMobileLoginApi(values)
+                data.status==='OK'&&setOtp('mobileOTP')
               }}
             >
               {formik => (
