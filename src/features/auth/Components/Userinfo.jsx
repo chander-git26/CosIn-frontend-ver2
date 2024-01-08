@@ -6,7 +6,7 @@ import InputMask from 'react-input-mask';
 
 
 
-const Userinfo = ( {loginToggle}) => {
+const Userinfo = ( {setDisplayLogin}) => {
 
 
 
@@ -55,16 +55,14 @@ const Userinfo = ( {loginToggle}) => {
                         await new Promise((r) => setTimeout(r, 500));
 
                         alert(JSON.stringify(values))
-                        const temp = { id: userstatus.userId, ...values }
-                        await postPersonalInfo(temp)
-                        onButtonClick("pagetwo")
+     
                     }}
                 >
                     {formik => (
 
 
                         <Form className='  flex flex-col p-5 w-full  gap-10 justify-center items-center'>
-                            <h1 className='text-center text-2xl my-6 text-gray-600 font-medium border-b-2 pb-2 self-center px-4 border-b-accent-hover '>Let us know more about you</h1>
+                            <h1 className='text-center text-2xl my-6 mb-2 text-gray-600 font-medium border-b-2 pb-2 self-center px-4 border-b-accent-hover '>Let us know more about you</h1>
                         
                             <div className='flex justify-between w-full '>
 
@@ -192,7 +190,7 @@ const Userinfo = ( {loginToggle}) => {
                         </Form>)}
                 </Formik>
             </div>
-            <button className='text-gray-600 absolute top-4 right-4 text-2xl' onClick={()=>loginToggle(prev=>!prev)}><i class="bi bi-x"></i></button>
+            <button  className='text-gray-600  hover:text-accent-hover hover:font-bold absolute top-4 right-4 text-2xl'onClick={()=>setDisplayLogin(prev=>!prev)}><i class="bi bi-x"></i></button>
 
 
         </div>
