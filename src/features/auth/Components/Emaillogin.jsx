@@ -13,7 +13,7 @@ import React from 'react'
 
 
 
-const Emaillogin = ({ setLogintype,setOtp }) => {
+const Emaillogin = ({ setLogintype,setOtp,setOtpSentTo }) => {
     return (
         <Formik
             initialValues={{
@@ -25,8 +25,8 @@ const Emaillogin = ({ setLogintype,setOtp }) => {
             })}
             onSubmit={async (values) => {
                 await new Promise((r) => setTimeout(r, 500));
-                console.log(values);
-                setOtp('values')
+                setOtpSentTo(values);
+                setOtp('mobileOTP')
 
             }}
         >

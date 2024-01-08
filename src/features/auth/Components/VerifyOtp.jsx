@@ -1,16 +1,20 @@
 import { Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import React from 'react'
+import { validateOtpApi } from '../UserloginApi';
 
 
 
 
 
-const VerifyOtp = ({setLoginsuccess}) => {
+const VerifyOtp = ({setLoginsuccess,otpSentTo}) => {
+
+  console.log(otpSentTo);
+  
   return (
     <div>
      
-
+      
      <Formik
               initialValues={{
                 otp: '',
@@ -22,14 +26,15 @@ const VerifyOtp = ({setLoginsuccess}) => {
               })}
               onSubmit={async (values) => {
                 await new Promise((r) => setTimeout(r, 500));
-                 console.log(values);
-                 
+                const responce= await  validateOtpApi(values);
+                console.log(responce);            
                  setLoginsuccess("success")
               }}
             >
               {formik => (
                 <Form className='  flex flex-col p-5  gap-2'>
                        <h1 className='text-lg font-semibold text-gray-600'>Enter OTP</h1>
+                       <h1 className='text-sm text-gray-400'>OTP set to {otpSentTo?.mobile}</h1>
                   <div className="flex flex-col my-5 relative  border-b-gray-400">
                     <Field id="otp" name="otp" placeholder="Enter OTP" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-xs" />
                     {formik.touched.otp && formik.errors.otp ? (
