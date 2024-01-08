@@ -5,7 +5,7 @@ import Emaillogin from './Emaillogin';
 import VerifyOtp from './VerifyOtp';
 
 
-const AuthLogin = ({loginToggle ,setLoginsuccess}) => {
+const AuthLogin = ({setDisplayLogin ,setLoginsuccess}) => {
   const [logintype,setLogintype] =  useState('mobile')
   const [otp,setOtp] = useState()
 
@@ -19,6 +19,7 @@ const AuthLogin = ({loginToggle ,setLoginsuccess}) => {
             <h1 className='text-4xl leading-relaxed font-semibold text-white'>Insurance at <br /> <span className='text-3xl'> One Place. </span></h1>
 
             <h1 className='font-semibold text-white text-xl'>Health Insurance</h1>
+            
 
         </div>
         <div className='w-1/2 bg-white flex flex-col relative justify-between  h-full overflow-hidden rounded-r-xl px-9   py-10'>
@@ -34,7 +35,7 @@ const AuthLogin = ({loginToggle ,setLoginsuccess}) => {
 
             <h1 className='text-[12px] font-normal text-gray-600 text-center '>By Proceeding, I agree to <span className='hover:text-accent-hover hover:cursor-pointer hover:text-shadow hover:[text-shadow:_0_0_1px_#E5AA18]'> T&C , Privacy Policy & Tariff Rates</span></h1>
 
-            <button className='text-gray-600 absolute top-4 right-4 text-2xl' onClick={()=>loginToggle(prev=>!prev)}><i class="bi bi-x"></i></button>
+            <button className='text-gray-600  hover:text-accent-hover hover:font-bold absolute top-4 right-4 text-2xl' onClick={()=>setDisplayLogin(prev=>!prev)}><i className="bi bi-x h5"></i></button>
         </div>
     </div>
   )
