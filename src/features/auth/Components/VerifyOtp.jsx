@@ -1,6 +1,6 @@
 import { Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
-import React from 'react'
+import  React, { useState,useEffect  } from 'react'
 import { validateOtpApi } from '../UserloginApi';
 
 
@@ -10,6 +10,21 @@ import { validateOtpApi } from '../UserloginApi';
 const VerifyOtp = ({setLoginsuccess,otpSentTo}) => {
 
   console.log(otpSentTo);
+  const [resendTimer, setResendTimer] = useState(20);
+  useEffect(() => {
+    let timerId;
+ 
+    if (resendTimer > 0) {
+      timerId = setTimeout(() => setResendTimer((prev) => prev - 1), 1000);
+    }
+ 
+    return () => clearTimeout(timerId);
+  }, [resendTimer]);
+ 
+  const handleResendOtp = () => {
+    
+    setResendTimer(20);
+  };
   
   return (
     <div>
@@ -45,7 +60,14 @@ const VerifyOtp = ({setLoginsuccess,otpSentTo}) => {
 
                   <button type="submit" className='bg-accent font-medium  p-3 px-4 hover:bg-accent-hover   w-auto rounded-md hover:text-white transition-all	 duration-200   text-sm'>Verify OTP</button>
                   {/* <button className='text-sm text-center py-2 ' onClick={()=>{setLogintype('email')}}> <span className='text-gray-500 font-semibold text-xs  hover:text-accent-hover '> {"(or)"} Login with E-Mail</span></button> */}
-
+                  <button
+              type="button"
+              onClick={handleResendOtp}
+              disabled={resendTimer > 0}
+              className='text-sm text-center py-2'
+            >
+              Resend OTP {resendTimer > 0 && `in ${resendTimer}s`}
+            </button>
                 </Form>)}
             </Formik>
     </div>
