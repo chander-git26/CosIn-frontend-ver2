@@ -9,6 +9,9 @@ const AuthLogin = ({setDisplayLogin ,setLoginsuccess}) => {
   const [logintype,setLogintype] =  useState('mobile')
   const [otp,setOtp] = useState()
 
+const [otpSentTo,setOtpSentTo]=useState()
+
+
   
 
  
@@ -29,8 +32,8 @@ const AuthLogin = ({setDisplayLogin ,setLoginsuccess}) => {
             <h1 className='font-semibold text-white text-xl'>Health Insurance</h1>
 
             {logintype==='mobile'?
-            (!otp?<Mobilelogin setLogintype={setLogintype} setOtp={setOtp}/>:<VerifyOtp setLoginsuccess={setLoginsuccess}/>)
-            :(!otp?<Emaillogin setLogintype={setLogintype} setOtp={setOtp}/>:<VerifyOtp setLoginsuccess={setLoginsuccess}/>)}
+            (!otp?<Mobilelogin setLogintype={setLogintype} setOtpSentTo={setOtpSentTo} setOtp={setOtp}/>:<VerifyOtp otpSentTo={otpSentTo} setLoginsuccess={setLoginsuccess}/>)
+            :(!otp?<Emaillogin setLogintype={setLogintype} setOtpSentTo={setOtpSentTo} setOtp={setOtp}/>:<VerifyOtp otpSentTo={otpSentTo} setLoginsuccess={setLoginsuccess}/>)}
 
 
             <h1 className='text-[12px] font-normal text-gray-600 text-center '>By Proceeding, I agree to <span className='hover:text-accent-hover hover:cursor-pointer hover:text-shadow hover:[text-shadow:_0_0_1px_#E5AA18]'> T&C , Privacy Policy & Tariff Rates</span></h1>
