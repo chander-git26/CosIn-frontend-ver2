@@ -12,9 +12,14 @@ const config = {
 }
 
 export const  userMobileLoginApi = async(body) =>{
-    const res =  await axios.post(MOBILE_OTP_GENERATE_URL,body,config).then(res=>res)
-     return res
 
+    try{
+
+        const res =  await axios.post(MOBILE_OTP_GENERATE_URL,body,config).then(res=>res)
+         return res
+    } catch(err){
+        console.log(err);
+    }
 }
 export const  userEmailLoginApi = async(body) =>{
     const res =  await axios.post(EMAIL_OTP_GENERATE_URL,body,config).then(res=>res)
@@ -22,7 +27,12 @@ export const  userEmailLoginApi = async(body) =>{
 
 }
 export const  validateOtpApi = async(body) =>{
-    const res =  await axios.post(VALIDATE_OTP_URL,body,config).then(res=>res)
-     return res
+    try{
+
+        const res =  await axios.post(VALIDATE_OTP_URL,body,config).then(res=>res)
+        return res
+    }catch(err){
+        return err.response
+    }
 
 }

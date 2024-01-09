@@ -9,7 +9,6 @@ const Header = ({ setDisplayLogin, displayLogin }) => {
   const [scroll, setScroll] = useState(false);
 
 
-console.log(scroll);
 
  useEffect(() => {
    window.addEventListener("scroll", () => {

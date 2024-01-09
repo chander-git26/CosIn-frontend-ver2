@@ -10,7 +10,7 @@ import { userEmailLoginApi, userMobileLoginApi, validateOtpApi } from '../Userlo
 const VerifyOtp = ({ setLoginsuccess, otpSentTo }) => {
   
 
-  const [error, setError] = useState()
+  const [otpErrorText, setOtpErrorText] = useState()
 
   const [resendTimer, setResendTimer] = useState(20);
   console.log(otpSentTo);
@@ -58,7 +58,9 @@ const VerifyOtp = ({ setLoginsuccess, otpSentTo }) => {
           await new Promise((r) => setTimeout(r, 500));
           const responce = await validateOtpApi({...otpSentTo,...values});
           console.log(responce);
-          setLoginsuccess(responce.data)
+          responce.status===200&&setLoginsuccess(responce.data)
+          responce.status===401&&setOtpErrorText("OTP Incorrect")
+          
         }}
       >
         {formik => (
@@ -69,10 +71,14 @@ const VerifyOtp = ({ setLoginsuccess, otpSentTo }) => {
               <Field id="otp" name="otp" placeholder="Enter OTP" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-xs" />
               {formik.touched.otp && formik.errors.otp ? (
                 <div className='text-xs mt-2 text-accent-hover' ><i className="bi bi-exclamation-circle"></i> {formik.errors.otp}</div>
-              ) : null}
-              {/* {formik.touched.otp && formik.errors.otp ? (
-                <div className='text-xs mt-2 text-accent-hover' ><i className="bi bi-exclamation-circle"></i> {formik.errors.otp}</div>
-              ) : null} */}
+              ) : 
+              (
+                otpErrorText ? (
+                  <div className='text-xs mt-2 text-right text-red-600' ><i className="bi bi-exclamation-circle"></i> {otpErrorText}</div>
+                ) : null
+              )
+              }
+              
 
             </div>
 
