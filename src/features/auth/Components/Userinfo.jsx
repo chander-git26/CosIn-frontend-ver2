@@ -32,9 +32,9 @@ const Userinfo = ( {setDisplayLogin}) => {
                         firstname: Yup.string()
                             .required("Required"),
                         lastname: Yup.string()
-                            .required(),
-                        email: Yup.string().email('Invalid email address').required('E-mail is required'),
-                        mobile: Yup.string().required('Phone number is Required').min(10, 'Phone number is not valid').max(10, 'Phone number is not valid'),
+                            .required("Required"),
+                        email: Yup.string().email('Invalid email address').required('Required'),
+                        mobile: Yup.string().required('Required').min(10, 'Phone number is not valid').max(10, 'Phone number is not valid'),
 
                         gender: Yup.string()
                             .required(),
@@ -45,10 +45,10 @@ const Userinfo = ( {setDisplayLogin}) => {
                                 const valid = validDate.getFullYear() - dob.getFullYear() >= 18;
                                 return !valid ? ctx.createError() : valid;
                             })
-                            .required('Date of birth required').typeError('Date of birth required'),
+                            .required('Required').typeError('invalid Date of birth '),
 
                         maritalStatus: Yup.string()
-                            .required(),
+                            .required("Required"),
 
                     })}
                     onSubmit={async (values) => {
