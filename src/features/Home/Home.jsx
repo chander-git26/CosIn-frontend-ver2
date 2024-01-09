@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import Header from '../../components/Header'
 import Banner from '../../Components/Banner'
+import Footer from '../../components/Footer'
 
 const Home = () => {
   const [ displayLogin, setDisplayLogin ] = useState(false)
@@ -29,6 +30,7 @@ const Home = () => {
     <div className='h-screen w-full bg-blue-100'>
 
     </div>
+    <Footer/>
     {/* section -2 */}
     {/* section -3 */}
     {/* section -4 */}
