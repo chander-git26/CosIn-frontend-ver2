@@ -66,3 +66,12 @@
     
      
 }
+.menuitem i{
+    transition: all 0.25s;
+    transition-timing-function: ease-in-out;
+}
+.menuitem:hover i {
+    color: black;
+    transform: rotate(180deg);
+
+}
