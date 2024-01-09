@@ -16,7 +16,8 @@ const Login = ({ setDisplayLogin }) => {
         {
           !loginSuccess ?
             <AuthLogin setDisplayLogin={setDisplayLogin} setLoginsuccess={setLoginsuccess} />
-            : <Userinfo setDisplayLogin={setDisplayLogin} />
+            :(!loginSuccess?.data?.userId?<Userinfo setDisplayLogin={setDisplayLogin} />:null)
+            
         }
       </div>
 

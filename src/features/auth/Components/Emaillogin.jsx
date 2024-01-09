@@ -1,6 +1,7 @@
 import { Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import React from 'react'
+import { userEmailLoginApi } from '../UserloginApi';
 
 
 
@@ -25,8 +26,11 @@ const Emaillogin = ({ setLogintype,setOtp,setOtpSentTo }) => {
             })}
             onSubmit={async (values) => {
                 await new Promise((r) => setTimeout(r, 500));
+                console.log(values);
                 setOtpSentTo(values);
+                await userEmailLoginApi({...values})
                 setOtp('mobileOTP')
+                data.status==='OK'&&setLogintype('email')
 
             }}
         >

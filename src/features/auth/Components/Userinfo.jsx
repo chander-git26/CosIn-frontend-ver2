@@ -72,7 +72,7 @@ const Userinfo = ( {setDisplayLogin}) => {
                                         <div className="flex flex-col  relative  border-b-gray-400">
                                         <label htmlFor="firstname " className="font-medium text-gray-600 px-2">First name</label>
 
-                                            <Field id="firstname" name="firstname" placeholder="Enter your Firstname" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-sm" />
+                                            <Field id="firstname" name="firstname" placeholder="Enter Firstname" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-sm" />
                                             {formik.touched.firstname && formik.errors.firstname ? (
                                                 <div className='text-xs mt-2 text-accent-hover absolute -bottom-6 left-0' ><i className="bi bi-exclamation-circle"></i> {formik.errors.firstname}</div>
                                             ) : null}
@@ -107,7 +107,7 @@ const Userinfo = ( {setDisplayLogin}) => {
                                     </div>
                                     <div className="flex flex-col  relative  border-b-gray-400">
                                         <label htmlFor="mobile"  className="font-medium text-gray-600 px-2">Mobile</label>
-                                        <Field id="mobile" name="mobile" placeholder="Enter your phone number" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-sm" />
+                                        <Field id="mobile" name="mobile" placeholder="Enter Mobile number" type='text' className="focus:outline-none focus:border-b-2 border-b-2 focus:border-accent-hover text-sm py-2 px-2  flex-1  placeholder:text-sm" />
                                         {formik.touched.mobile && formik.errors.mobile ? (
                                             <div className='text-xs mt-2 text-accent-hover absolute -bottom-6 left-0'><i className="bi bi-exclamation-circle"></i> {formik.errors.mobile}</div>
                                         ) : null}

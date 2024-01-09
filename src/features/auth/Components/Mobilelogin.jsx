@@ -9,9 +9,6 @@ function Mobilelogin({setLogintype, setOtp,setOtpSentTo}) {
 
   return (
     <div>
-   
-        
-
 
         <Formik
               initialValues={{
@@ -27,7 +24,8 @@ function Mobilelogin({setLogintype, setOtp,setOtpSentTo}) {
                 await new Promise((r) => setTimeout(r, 500));
                  setOtpSentTo(values)
                 const {data}= await userMobileLoginApi(values)
-                data.status==='OK'&&setOtp('mobileOTP')
+                data.status==='OK'&&setLogintype('mobile')
+                setOtp('mobile')
               }}
             >
               {formik => (

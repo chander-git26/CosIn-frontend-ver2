@@ -8,8 +8,7 @@ import VerifyOtp from './VerifyOtp';
 const AuthLogin = ({setDisplayLogin ,setLoginsuccess}) => {
   const [logintype,setLogintype] =  useState('mobile')
   const [otp,setOtp] = useState()
-
-const [otpSentTo,setOtpSentTo]=useState()
+  const [otpSentTo,setOtpSentTo]=useState()
 
 
   
