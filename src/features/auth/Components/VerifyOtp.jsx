@@ -2,18 +2,25 @@ import { Field, Formik, Form } from 'formik';
 import * as Yup from 'yup';
 import React, { useState, useEffect } from 'react'
 import { userEmailLoginApi, userMobileLoginApi, validateOtpApi } from '../UserloginApi';
+import { useDispatch, useSelector } from 'react-redux';
+import { addUserData, selectLoggedInUser } from '../UserSlice';
 
 
 
 
 
 const VerifyOtp = ({ setLoginsuccess, otpSentTo }) => {
-  
+
+  const data = useSelector(selectLoggedInUser)
+
+  const dispatch = useDispatch()
 
   const [otpErrorText, setOtpErrorText] = useState()
 
   const [resendTimer, setResendTimer] = useState(20);
-  console.log(otpSentTo);
+
+  
+  console.log(data);
 
 
 
@@ -58,7 +65,7 @@ const VerifyOtp = ({ setLoginsuccess, otpSentTo }) => {
           await new Promise((r) => setTimeout(r, 500));
           const responce = await validateOtpApi({...otpSentTo,...values});
           console.log(responce);
-          responce.status===200&&setLoginsuccess(responce.data)
+          responce.status===200&&dispatch(addUserData(responce.data))
           responce.status===401&&setOtpErrorText("OTP Incorrect")
           
         }}

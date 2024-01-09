@@ -3,6 +3,8 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import Mobilelogin from './Mobilelogin';
 import Emaillogin from './Emaillogin';
 import VerifyOtp from './VerifyOtp';
+import { useDispatch } from 'react-redux';
+import { resetUserData } from '../UserSlice';
 
 
 const AuthLogin = ({setDisplayLogin ,setLoginsuccess}) => {
@@ -10,6 +12,7 @@ const AuthLogin = ({setDisplayLogin ,setLoginsuccess}) => {
   const [otp,setOtp] = useState()
   const [otpSentTo,setOtpSentTo]=useState()
 
+  const dispatch = useDispatch()
 
   
 
@@ -37,7 +40,7 @@ const AuthLogin = ({setDisplayLogin ,setLoginsuccess}) => {
 
             <h1 className='text-[12px] font-normal text-gray-600 text-center '>By Proceeding, I agree to <span className='hover:text-accent-hover hover:cursor-pointer hover:text-shadow hover:[text-shadow:_0_0_1px_#E5AA18]'> T&C , Privacy Policy & Tariff Rates</span></h1>
 
-            <button className='text-gray-600  hover:text-accent-hover hover:font-bold absolute top-4 right-4 text-2xl' onClick={()=>setDisplayLogin(prev=>!prev)}><i className="bi bi-x h5"></i></button>
+            <button className='text-gray-600  hover:text-accent-hover hover:font-bold absolute top-4 right-4 text-2xl' onClick={()=>{setDisplayLogin(prev=>!prev);dispatch(resetUserData())}}><i className="bi bi-x h5"></i></button>
         </div>
     </div>
   )
