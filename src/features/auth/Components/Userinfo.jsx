@@ -66,9 +66,31 @@ const Userinfo = ({ setDisplayLogin, user }) => {
                     })}
                     onSubmit={async (values) => {
                         await new Promise((r) => setTimeout(r, 500));
-
-                        alert(JSON.stringify(values))
-                        await userRegistration(values)
+                        const tempstore = {}
+                        if(user?.email){
+                             tempstore = {
+                                firstname:values.firstname,
+                                lastname: values.lastname,
+                                mobile: values.mobile,
+                                email: null,
+                                dateOfBirth: values.dateOfBirth,
+                                gender: values.gender,
+                                maritalStatus: values.maritalStatus,
+                            }
+                        }
+                        if(user?.mobile){
+                             tempstore = {
+                                firstname:values.firstname,
+                                lastname: values.lastname,
+                                mobile: null,
+                                email: values.email,
+                                dateOfBirth: values.dateOfBirth,
+                                gender: values.gender,
+                                maritalStatus: values.maritalStatus,
+                            }
+                        }
+                        alert(JSON.stringify(tempstore))
+                        // await userRegistration(values)
                     }}
                 >
                     {formik => (

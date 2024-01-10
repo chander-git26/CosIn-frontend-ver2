@@ -66,12 +66,11 @@
     
      
 }
-.menuitem i{
+.menuitem span{
     transition: all 0.25s;
     transition-timing-function: ease-in-out;
-}
-.menuitem:hover i {
+ }
+ .menuitem:hover span {
     color: black;
     transform: rotate(180deg);
-
-}
+ }

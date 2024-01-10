@@ -1,0 +1,48 @@
+[
+    {
+        "self": true,
+        "spouse": false,
+        "father": false,
+        "fatherInLaw": false,
+        "motherInLaw": false,
+        "mother": false,
+        "grandfather": false,
+        "grandmother": false,
+        "son": 0,
+        "daughter": 0
+    },
+    {
+        "selfAge": 0,
+        "spouseAge": 0,
+        "fatherAge": 0,
+        "fatherInLawAge": 0,
+        "motherInLawAge": 0,
+        "motherAge": 0,
+        "grandfatherAge": 0,
+        "grandmotherAge": 0,
+        "firstSon": 0,
+        "secondSon": 0,
+        "thirdSon": 0,
+        "fourthSon": 0,
+        "firstDaughter": 0,
+        "secondDaughter": 0,
+        "thirdDaughter": 0,
+        "fourthDaughter": 0
+    },
+    {
+        "pincode": "0000000"
+    },
+    {
+        "fullName":"String",
+        "mobile":"9999999999"
+    },
+    {   
+        "diabetes":true,
+        "bloodPressure":true,
+        "anySurgery":true,
+        "thyroid":true,
+        "asthma":true,
+        "otherDisease":true,
+        "noneOfThese":true
+    }
+]
